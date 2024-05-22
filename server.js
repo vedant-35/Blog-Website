@@ -1,12 +1,13 @@
 const express = require("express");
 const articleRouter = require("./routes/articles");
-//const Article = require('./models/article');
+const Article = require('./models/article');
 const mongoose = require("mongoose");
 //const methodOverride = require('method-override');
 const app = express();
 
 mongoose.connect("mongodb://localhost/bharatInternDatabase");
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
   const articles = [
     {
