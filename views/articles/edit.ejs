@@ -9,16 +9,20 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Blog Website</title>
   </head>
   <body>
     <div class="container">
-      <br />
-      <h1 class="mb-4">Create New Article</h1>
-      <form action="/articles" method="POST"><%- include('form_field') %></form>
+      <h1 class="mb-4">Edit Article</h1>
+      <form action="/articles/<%=article.id %>?_method=PUT" method="POST">
+        <%- include('form_field') %>
+      </form>
     </div>
     <style>
       body {
@@ -47,6 +51,7 @@
       h1 {
         text-align: center;
         margin-bottom: 20px;
+        margin-top: 20px;
       }
 
       .form-group {
